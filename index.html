@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-   <!-- Favicon com emoji de foquinha -->
+  <!-- Favicon com emoji de foquinha -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🦭</text></svg>">
   
   <title>login</title>
@@ -75,6 +74,7 @@
     
     <input type="text" id="username" placeholder="Usuário">
     <input type="password" id="password" placeholder="Senha">
+    <!-- Botão de login -->
     <button onclick="login()">Entrar</button>
     
     <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
@@ -85,12 +85,14 @@
       const user = document.getElementById('username').value;
       const pass = document.getElementById('password').value;
 
+      // Usuário e senha salvos no localStorage
       const savedUser = localStorage.getItem("usuario");
       const savedPass = localStorage.getItem("senha");
 
       if (user === savedUser && pass === savedPass) {
         alert("Login feito com sucesso!");
-        window.location.href = "file:///C:/projetinho%20malu/index.html.html"; // redireciona para o site principal
+        // Redireciona para a página principal do site
+        window.location.href = "index.html.html"; // ajuste para o nome correto do arquivo home
       } else {
         alert("Usuário ou senha incorretos!");
       }
